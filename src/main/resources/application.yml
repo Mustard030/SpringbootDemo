@@ -1,0 +1,53 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: '@environment@'
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      timeout: 10s
+      lettuce:
+        pool:
+          enabled: true
+          max-active: 200
+          max-wait: -1ms
+          max-idle: 10
+          min-idle: 0
+
+  mail:
+    host: smtp.163.com
+    username: fzm978090944@163.com
+    password: IBGXXKUQKBVQEVKC
+
+  mvc:
+    static-path-pattern: /static/**
+  web:
+    resources:
+      add-mappings: false
+
+  security:
+    filter:
+      order: -100
+    user:
+      name: 'admin'
+      password: '123456'
+      roles:
+        - user
+        - admin
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+testfile:
+  filePath: D:/coding/

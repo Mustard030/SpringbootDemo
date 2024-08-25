@@ -12,7 +12,6 @@ import org.example.springbootstudy.mapper.User1Mapper;
 import org.example.springbootstudy.pojo.Subject;
 import org.example.springbootstudy.service.UserService;
 import org.example.springbootstudy.utils.AnyFunction;
-import org.jasypt.encryption.StringEncryptor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -170,10 +169,4 @@ class SpringbootstudyApplicationTests {
         System.out.println(redisTemplate.opsForValue().get("111"));
     }
 
-    @Autowired
-    private StringEncryptor encryptor;
-    @Test
-    public void test9(){
-        System.out.println(encryptor.encrypt("root"));
-    }
 }

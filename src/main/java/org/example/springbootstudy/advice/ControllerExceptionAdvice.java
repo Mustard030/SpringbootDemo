@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @Slf4j
-@RestControllerAdvice
+@RestControllerAdvice(basePackages = {"org.example.springbootstudy"})
 public class ControllerExceptionAdvice {
     //自行添加需要拦截的错误类型和R类信息
     @ExceptionHandler(BindException.class)

@@ -29,7 +29,10 @@ public class AsyncController {
             @ApiResponse(responseCode = "200", description = "请求成功"),
             @ApiResponse(responseCode = "500", description = "请求失败")
     })
-    public String sendMails(@Parameter(description = "邮件列表", example = "{\"a1@163.com\", \"a2@163.com\"}") String[] emails) {
+    public String sendMails(
+            @Parameter(description = "邮件列表", example = "{\"a1@163.com\", \"a2@163.com\"}", required = true)
+            String[] emails
+    ) {
         CompletableFuture<String>[] futures = new CompletableFuture[5];
 
 //        String[] emails = new String[]{"a1@163.com", "a2@163.com", "a3@163.com", "a4@163.com", "a5@163.com",};
